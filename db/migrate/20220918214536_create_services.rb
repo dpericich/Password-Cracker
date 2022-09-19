@@ -4,6 +4,7 @@ class CreateServices < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :url
       t.integer :try_before_lockout_count
+      t.integer :attempt_backoff_minutes
 
       t.timestamps
     end

@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_215950) do
     t.string "name"
     t.string "url"
     t.integer "try_before_lockout_count"
+    t.integer "attempt_backoff_minutes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_215950) do
     t.string "service", null: false
     t.integer "word_index", default: 0
     t.datetime "last_login"
-    t.string "successful_email"
+    t.string "successful_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
