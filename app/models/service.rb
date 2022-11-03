@@ -1,4 +1,3 @@
-class Service < ApplicatonRecord 
-    validates :name, presence: true
-    validates :url, presence: true
+class Service < ApplicationRecord
+  # Will fill this out more as I work through the OWASP V2 docs
 end
