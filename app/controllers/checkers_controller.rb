@@ -8,6 +8,8 @@ class CheckersController < ApplicationController
     current_attempts = 0;
 
     while (current_attempts < service.attempts_before_backoff) do
+      render json: "All terms in dicitonary guessed" if dictionary.terms[user.current_dictionary_index] == nil
+
       response = service.attempt_login(dictionary.terms[user.current_dictionary_index])
 
       if (response == "success")
@@ -24,6 +26,8 @@ class CheckersController < ApplicationController
         render json: status
       end
     end
+
+    render json: "Backoff reached"
   end
 
   def check_user_batch(user_collection)
