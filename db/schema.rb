@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_02_234713) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_03_031723) do
   create_table "dictionaries", force: :cascade do |t|
     t.string "terms", null: false
     t.datetime "created_at", null: false
@@ -35,6 +35,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_234713) do
     t.integer "duration_of_backoff"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rate_limit_per_hour"
+    t.string "blocked_ip_origins"
+    t.integer "failed_attempts_per_hour"
   end
 
   create_table "users", force: :cascade do |t|
