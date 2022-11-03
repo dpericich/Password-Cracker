@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get 'check-user', to: "checkers#check_user"
+  get 'check-user-batch', to: "checkers#check_user_batch"
 end
